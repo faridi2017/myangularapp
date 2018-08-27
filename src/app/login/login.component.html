@@ -1,0 +1,149 @@
+<div class="container-scroller">
+        <div class=" page-body-wrapper full-page-wrapper">
+          <div class="content-wrapper d-flex align-items-center auth auth-bg-1 theme-one">
+            <div class="row w-100 mx-auto">
+              <div class="col-lg-4 mx-auto">
+               <div class="auto-form-wrapper">
+                  <div class="logo-wapper">
+                      <img src="assets/images/VC-logo-PNG.png" style="height: 80px;">
+                    </div>  
+                  <form role="form" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+                    <div class="form-group">
+                      <label class="label">Username</label>
+                      <div class="input-group">
+                        <input type="text" placeholder="Username" class="form-control" 
+                        formControlName="userName" required="" (keyup)="checkUsername($event)">
+                      </div>
+                      <span *ngIf="bUserName" style="color:red;">Enter user name</span>
+                    </div>
+                    <div class="form-group">
+                      <label class="label">Password</label>
+                      <div class="input-group">
+                        <input type="password" placeholder="Password" formControlName="password"
+                        class="form-control" (keyup)="checkPassword($event)">
+                      </div>
+                      <span *ngIf="bPassword" style="color:red;">Enter Password</span>
+                    </div>
+                    <div class="form-group">
+                      <button  type="submit" [disabled]="!loginForm.valid" class="btn btn-primary submit-btn btn-block">Login</button>
+                    </div>
+                    <div class="form-group d-flex justify-content-between">
+                      <!--<div class="form-check form-check-flat mt-0">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" checked> Keep me signed in
+                        </label>
+                      </div>-->
+                      <a routerLink="resetpassword" class="text-small forgot-password text-black">Forgot Password</a>
+                    </div>
+                    <!--<div class="form-group">
+                      <button class="btn btn-block g-login">
+                        <img class="mr-3" src="../assets/images/icon-google.svg" alt="">Log in with Google</button>
+                    </div>
+                    <div class="text-block text-center my-3">
+                      <span class="text-small font-weight-semibold">Not a member ?</span>
+                      <a routerLink="signup" class="text-black text-small">Create new account</a>
+                    </div>-->
+                  </form>
+                </div>
+                <!--<ul class="auth-footer">
+                  <li>
+                    <a href="#">Conditions</a>
+                  </li>
+                  <li>
+                    <a href="#">Help</a>
+                  </li>
+                  <li>
+                    <a href="#">Terms</a>
+                  </li>
+                </ul>-->
+                <div style="margin-top: 20px;">
+                <p style="color:#fff;"  class="footer-text text-center"> © 2018 VictorCalls. 
+                  | Developed By : <a href="http://www.brandsbrother.com" target="_blank" style="color:#fff;"> Brandsbrother</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+      </div>
+      <!-- container-scroller -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-4">
+          <div class="misc-header text-center">
+             
+          </div>
+          <div class="misc-box">
+            <form role="form" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+              <div class="form-group">
+
+                  <div class="group-icon">
+                    <input  type="text" placeholder="Username" class="form-control" 
+                    formControlName="userName" required="" (keyup)="checkUsername($event)">
+                     <span *ngIf="bUserName" style="color:red;">Enter user name</span>
+                  </div>
+                    
+               </div>
+               <div class="form-group">
+
+                   <div class="group-icon">
+                      <input type="password" placeholder="Password" formControlName="password"
+                       class="form-control" (keyup)="checkPassword($event)">
+                      <span *ngIf="bPassword" style="color:red;">Enter Password</span>
+                      </div>
+                    
+                  </div>
+                  <div class="clearfix">
+                        <span *ngIf="failedLogin" style="color:red;">Wrong user name or password</span>
+                      <div class="pull-right">
+                          <button type="submit" [disabled]="!loginForm.valid" class="btn btn-block btn-primary">Login</button>
+                      </div>
+                   
+                  </div>
+                  <hr>
+
+                  <p class="text-center"><a routerLink="resetpassword">Forgot Password</a></p>
+             
+                 <a routerLink="signup" class="btn btn-block btn-success">Register Now</a> 
+              </form>
+             
+          </div>
+          </div>
+          </div>
+          </div>-->
+        

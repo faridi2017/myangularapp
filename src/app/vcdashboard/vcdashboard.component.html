@@ -1,0 +1,202 @@
+<div class="container-scroller">
+  <!-- partial:partials/_navbar.html -->
+  <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <img src="assets/images/VC-512-px-512px.png" alt="logo" />
+      </a>
+      <a class="navbar-brand brand-logo-mini" href="index.html">
+        <img src="assets/images/VC-512-px-512px.png" alt="logo" />
+      </a>
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-center">
+      <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+        <i class="zmdi zmdi-menu"></i>
+      </button>
+      
+      <ul class="navbar-nav navbar-nav-right">
+        
+        <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
+          <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+            <div class="dropdown-toggle-wrapper">
+              
+              <div class="inner">
+                <div class="inner">
+                  <span class="profile-text font-weight-bold">Larry Garner</span>
+                  <small class="profile-text small">Admin</small>
+                </div>
+                <div class="inner">
+                  <div class="icon-wrapper">
+                    <i class="zmdi zmdi-chevron-down"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+              <a class="dropdown-item">
+                  <a href="">Reset Password</a>
+                </a>
+            <a class="dropdown-item">
+              <a routerLink="">Sign Out</a>
+            </a>
+          </div>
+        </li>
+       <li class="nav-item dropdown color-setting d-none d-md-block">
+          <a class="nav-link count-indicator" href="#">
+            <i class="zmdi zmdi-settings"></i>
+          </a>
+        </li>
+      </ul>
+      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" 
+          data-toggle="offcanvas">
+        <span class="mdi mdi-menu"></span>
+      </button>
+    </div>
+  </nav>
+  <!-- partial -->
+  <div class=" page-body-wrapper">
+    
+    <!-- partial -->
+    <!-- partial:partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas sidebar-dark" id="sidebar">
+      <ul class="nav">
+        <li class="nav-item nav-profile">
+          <img src="assets/images/face1.jpg" alt="profile image">
+          <p class="text-center font-weight-medium">Larry Garner</p>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home">
+            <i class="zmdi zmdi-view-dashboard menu-icon"></i>
+            <span class="menu-title">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="manageIntegrations" >
+            <i class="menu-icon zmdi zmdi-airplay"></i>
+            <span class="menu-title">Manage Integration</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="projects" >
+            <i class="menu-icon zmdi zmdi-airplay"></i>
+            <span class="menu-title">Manage Project</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="manageUser">
+            <i class="menu-icon zmdi zmdi-accounts-list"></i>
+            <span class="menu-title">Manage User</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="manageCompanies">
+            <i class="menu-icon zmdi zmdi-accounts-list-alt"></i>
+            <span class="menu-title">Manage Companies</span>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="uploadFiles">
+              <i class="menu-icon zmdi zmdi-hospital"></i>
+              <span class="menu-title">Upload Leads (Excel file)</span>
+            </a>
+          </li>
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" 
+             aria-controls="ui-basic">
+            <i class="menu-icon zmdi zmdi-comment-list"></i>
+            <span class="menu-title">Other Leads</span>
+          </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="rawLead">Raw Leads </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="currentLead">Current Leads 
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="noWorkLead" >No work
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="notConnectedLead">Not Connected
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="followUpLead">Follow Up
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="visitOnLead">Visit On
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="visitDoneLead">Visit Done
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="visitDeadLead">Visit Dead
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="otherProjectLead">Other project Count
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="resaleLead">Resale Count
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="alreadyBookedLead">Already Booked
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="bookedDoneLead">Booked Done
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="deadLead">Dead Count
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="rentLead">Rent Count
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="plotLead">Plot Count
+                    </a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" routerLink="duplicateLead">Duplicate Count
+                    </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="sales">
+            <i class="menu-icon zmdi zmdi-group"></i>
+            <span class="menu-title">Sales</span>
+          </a>
+        </li>
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="">
+            <i class="menu-icon zmdi zmdi-balance-wallet"></i>
+            <span class="menu-title">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->

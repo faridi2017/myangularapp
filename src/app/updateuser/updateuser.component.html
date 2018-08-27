@@ -1,0 +1,214 @@
+<!-- partial -->
+<div class="main-panel" >
+    <div class="content-wrapper">
+      <div class="card">
+         
+       <div class="card-body">
+          <h4 class="card-title"> <label><h5 *ngIf="updatedUser">UPDATE USER with id={{updatedUser.id}}&nbsp;
+              and Name:{{updatedUser.firstName}}&nbsp;{{updatedUser.lastName}}</h5>
+             </label> </h4>
+          <div class="row">
+              <div class="col-md-6" *ngIf="updatedUser">
+                  <form class="form-horizontal" (ngSubmit)="updateUser()">
+                     
+                    <div class="form-group">
+                      <label>Phone Number</label>
+                      <input type="text" name="phoneNumber" class="form-control"
+                      [(ngModel)]="updatedUser.phoneNumber" style="padding: 9px;">
+                  </div>
+                 <div class="form-group">
+                     <label>User Name</label>
+                     <input type="text" name="userName" class="form-control"
+                    [(ngModel)]="updatedUser.userName" style="padding: 9px;">
+                </div>
+                <div class="form-group">
+                   <label>Password</label>
+                       <input type="password" name="password" class="form-control"
+                      [(ngModel)]="updatedUser.password" style="padding: 9px;">
+                  </div>
+                  <div class="form-group">
+                    <label>Confirm Password</label>
+                     <input type="password" name="cPassword" class="form-control"
+                    style="padding: 9px;" (keyup)="confirmPassword($event)">
+                    <span style="float:right" *ngIf="cpy">
+                    <i class="fa fa-check-circle-o" aria-hidden="true" style="color: rgb(9, 238, 9)"></i></span>
+                    <span style="float:right" *ngIf="!cpy">
+                    <i class="fa fa-window-close" aria-hidden="true" style="color: red"></i></span>
+                   </div>
+                   <div class="form-group">
+                       <label>Company Id</label>
+                        <input name="companyId" class="form-control" [(ngModel)]="updatedUser.companyId"
+                          (change)="selectedCompanyId()" style="padding: 9px;" readonly>
+                          
+                        
+                     </div>
+                    <div class="form-group">
+                      <label>Email</label>
+                        <input type="text" name="email" class="form-control" 
+                         [(ngModel)]="updatedUser.email" style="padding: 9px;">
+                  </div>
+                  <div class="form-group">
+                    <label>First Name</label>
+                     <input type="text" name="firstName" class="form-control"
+                    [(ngModel)]="updatedUser.firstName" style="padding: 9px;">
+                </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="lastName" class="form-control"
+                [(ngModel)]="updatedUser.lastName" style="padding: 9px;">
+              </div>
+              <div class="form-group">
+                <label>Role Name</label>
+                <select name="roleName" class="form-control" [(ngModel)]="updatedUser.roleName"
+                 (change)="selectedRole()" style="padding: 9px;">
+                <option *ngFor="let role of roles">{{role}}</option>
+              </select>
+              </div>
+              <div class="form-group">
+                <label>Project Name</label>
+                <select name="projectName" class="form-control" [(ngModel)]="updatedUser.projectName"
+                (change)="selectedProject()" style="padding: 9px;">
+               <option *ngFor="let project of projects">{{project}}</option>
+              </select>
+              </div>
+               <button type="submit" class="btn btn-success btn-icon" style="margin-left: 10px;">
+                        Update</button>
+                <button (click)="cancelUpdate()" class="btn btn-danger btn-icon" style="margin-left: 10px;">
+                Cancel</button>
+                </form>
+              </div> 
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content-wrapper ends -->
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container">
+    <label><h5>UPDATE USER with id={{updatedUser.id}}&nbsp;
+       and Name:{{updatedUser.firstName}}&nbsp;{{updatedUser.lastName}}</h5>
+      </label> 
+    <div class="col-md-6" *ngIf="updatedUser">
+      <form class="form-horizontal" (ngSubmit)="updateUser()">
+         
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="text" name="phoneNumber" class="form-control"
+          [(ngModel)]="updatedUser.phoneNumber" style="padding: 9px;">
+      </div>
+     <div class="form-group">
+                             <label>User Name</label>
+                        
+                            <input type="text" name="userName" class="form-control"
+                            [(ngModel)]="updatedUser.userName" style="padding: 9px;">
+                           
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+           
+                  <input type="text" name="password" class="form-control"
+                  [(ngModel)]="updatedUser.password" style="padding: 9px;">
+                 
+      </div>
+      <div class="form-group">
+        <label>Confirm Password</label>
+     
+        <input type="text" name="cPassword" class="form-control"
+        style="padding: 9px;" (keyup)="confirmPassword($event)">
+        <span style="float:right" *ngIf="cpy">
+        <i class="fa fa-check-circle-o" aria-hidden="true" style="color: rgb(9, 238, 9)"></i></span>
+        <span style="float:right" *ngIf="cpn">
+        <i class="fa fa-window-close" aria-hidden="true" style="color: red"></i></span>
+        
+       
+  </div>
+               
+                <div class="form-group">
+                            <label>Company Id</label>
+                            <select name="companyId" class="form-control" [(ngModel)]="updatedUser.companyId"
+                          (change)="selectedCompanyId()" style="padding: 9px;">
+                         <option *ngFor="let id of companyIds">{{id}}</option>
+                       </select>
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" name="email" class="form-control" 
+                  [(ngModel)]="updatedUser.email" style="padding: 9px;">
+      </div>
+      <div class="form-group">
+        <label>First Name</label>
+    
+        <input type="text" name="firstName" class="form-control"
+        [(ngModel)]="updatedUser.firstName" style="padding: 9px;">
+       
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+  
+    <input type="text" name="lastName" class="form-control"
+    [(ngModel)]="updatedUser.lastName" style="padding: 9px;">
+   
+  </div>
+  <div class="form-group">
+    <label>Role Name</label>
+    <select name="roleName" class="form-control" [(ngModel)]="updatedUser.roleName"
+     (change)="selectedRole()" style="padding: 9px;">
+    <option *ngFor="let role of roles">{{role}}</option>
+  </select>
+   
+  </div>
+  <div class="form-group">
+    <label>Project Name</label>
+    <select name="projectName" class="form-control" [(ngModel)]="updatedUser.projectName"
+    (change)="selectedProject()" style="padding: 9px;">
+   <option *ngFor="let project of projects">{{project}}</option>
+  </select>
+   
+   
+  </div>
+               
+              
+              
+                      <button type="submit" class="btn btn-success btn-icon" style="margin-left: 10px;">
+                                  Update</button>
+                                  <button (click)="cancelUpdate()" class="btn btn-danger btn-icon" style="margin-left: 10px;">
+                                      Cancel</button>
+    </form>
+  
+    </div>
+  
+  
+  </div>-->

@@ -1,0 +1,134 @@
+<!-- partial -->
+<div class="main-panel" >
+    <div class="content-wrapper">
+      <div class="card">
+       <div class="card-body">
+          <h4 class="card-title">Manage Document : &nbsp;{{numberOfRecord}}&nbsp;Records</h4>
+          <div class="row">
+              <div class="col-12 table-responsive">
+                  <table id="mydatatable" class="table table-striped">
+                    <thead style="background: #87ceeb">
+                        <tr>
+                            <th>Document ID</th>
+                            <th>Project ID</th>
+                            <th>Document Name</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let myList of documents; let i = index" [attr.data-index]="i" >
+                            <td >{{myList.documentID}}</td>
+                            <td>{{myList.projectID}}</td>
+                            <td>{{myList.name}}</td>
+                            <td>{{myList.link}}</td>
+                          </tr>
+                    </tbody>
+                  </table>
+                </div>  
+                
+                <div class="row">
+                    <div class="col-md-6 col-sm-10 col-xs-12">
+                        <button class="btn btn-success btn-icon" style="margin-left: 10px;background: #87ceeb;
+                        color: #131e42;font-weight: bold;" (click)="showForm()" *ngIf="!form1">Add Document</button>
+                        
+                     </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content-wrapper ends -->
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class='container'>
+
+  <div class="row" style="padding-top: 5px; padding-bottom: 5px;"> 
+          <div class="col-sm-7">Manage Document</div>
+          <div class="col-sm-3">  
+         
+        </div>
+
+  </div>
+
+      <table id="mydatatable" class="table table-striped table-bordered" style="text-align: center">
+        <thead class="table-success">
+        <tr class="d-flex">
+        
+        <th class="col-3">Document ID</th>
+        <th class="col-3">Project ID</th>
+        <th class="col-3">Document Name</th>
+        <th class="col-3">Link</th>
+        
+        </tr>
+        </thead>
+      
+        <tbody *ngIf="documents">
+          <tr *ngFor="let myList of documents; let i = index" [attr.data-index]="i" class="d-flex">
+            <td class="col-3">{{myList.documentID}}</td>
+            <td class="col-3">{{myList.projectID}}</td>
+            <td class="col-3">{{myList.name}}</td>
+            <td class="col-3">{{myList.link}}</td>
+          </tr>
+                      
+          </tbody>
+          </table>
+          <h5>{{numberOfRecord}}&nbsp;Records</h5>
+          <div class="row">
+              <div class="col-md-6 col-sm-10 col-xs-12" style="border-left: 1px solid;">
+                  <button class="btn btn-success btn-icon" style="margin-left: 10px;" (click)="showForm()" 
+                  *ngIf="!form1">Add Document</button>
+                  <form class="form-horizontal" (ngSubmit)="addDocument()" *ngIf="form1">
+                    <label><h4>ADD DOCUMENT</h4></label>         
+                    <div class="form-group">
+                                          <label>Document Name</label>
+                       <input type="text" name="name" class="form-control" 
+                                          [(ngModel)]="newDoc.name" style="padding: 9px;" >
+                              </div>
+                                                      
+                              <div class="form-group">
+                                          <label>Add file</label>
+                                          <input type="file" (change)="fileChange($event)"
+                                           placeholder="Upload file" accept=".pdf,.doc,.docx" name="file" class="form-control" >
+                                        
+                        
+                              </div>
+                              <button (click)="cancelForm()" class="btn" type="reset" style="background-color: #950505; color: cornsilk" >
+                                    <b>Cancel</b></button>
+                                    <button type="submit" class="btn btn-success btn-icon" style="margin-left: 10px;">
+                                                Save</button>
+            
+                  </form>
+               </div>
+    </div>-->
+    
+ 

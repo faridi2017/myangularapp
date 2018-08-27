@@ -1,0 +1,121 @@
+<div class="main-panel" >
+    <div class="my-container">
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+      </div>
+    <div class="content-wrapper">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title" style="color:#131e42">Visit Done Leads : {{indexL}}</h4>
+          <div class="row">
+            <div class="col-12 table-responsive">
+                <table id="mydatatable" class="table table-striped">
+                    <thead style="background: #87ceeb">
+                      <tr  >
+                        <th ></th>
+                        <th >Lead Id</th>
+                        <th class="col-1">Name</th>
+                        <th >Email</th>
+                        <th >Phone Number</th> 
+                        <th >Lead Source</th>
+                        <th>Assigned To User</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let myList of myLead; let i = index" [attr.data-index]="i" >
+                        <th><input type="checkbox" id="1"
+                         [ngModel]="filter" (ngModelChange)="onRowSelect($event, i)">
+                        </th>
+                      <td >{{myList.leadId}}</td>
+                      <td><a (click)="getDetails(myList)" data-toggle="modal" data-target="#modalwindow2">
+                        {{myList.name}} <i class="fa fa-info-circle" style="color:#131e42"></i></a></td>
+                      <td >{{myList.email}}</td>
+                      <td>{{myList.phoneNumber}}</td>
+                      <td>{{myList.leadSource}}</td>
+                      <td >{{myList.cmpctLabel}}</td>
+                      
+                 
+                    </tr>
+                    </tbody>
+                  </table>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content-wrapper ends -->
+    
+  </div>
+
+
+<!-- Modal Window2 start-->
+<div class="modal" id="modalwindow2">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header" style="background-color:#daf4f9" >
+          <h4 class="modal-title" >Lead Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+         <div class="row" *ngIf="leadDetails">
+           <div class="col-md-6">
+             <p>leadId:&nbsp; {{leadDetails.leadId}}</p>
+             <p>Lead Source:&nbsp;{{leadDetails.leadSource}}</p>
+             <p>Name:&nbsp; {{leadDetails.name}}</p>
+             <p>Email:&nbsp; {{leadDetails.email}}</p>
+             <p>phoneNumber:&nbsp; {{leadDetails.phoneNumber}}</p>
+           </div>
+           <div class="col-md-6">
+             <p>createDateTime:&nbsp; {{leadDetails.createDateTime}}</p>
+             <p>CompanyId:&nbsp; {{leadDetails.companyId}}</p>
+             <p>Status:&nbsp; {{leadDetails.items[0].status}}</p>
+             <p>Query Remarks:&nbsp; {{leadDetails.items[0].queryRemarks}}</p>
+             <p>Other Details:&nbsp; </p>
+            </div>
+         </div>
+       
+         
+        </div>
+         <!-- Modal body End-->
+        <!-- Modal footer -->
+        <div class="modal-footer ">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div> <!-- Modal Window2 End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

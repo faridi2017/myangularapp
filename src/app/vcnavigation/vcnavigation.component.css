@@ -1,0 +1,20 @@
+a:active{color:white};
+a:link{color:white}
+.w3-bar-item,.w3-button  a:hover{
+    
+    color:#131e42;
+    background:#87ceeb;
+    
+    
+}
+
+.w3-teal .w3-xlarge{
+    float:left;
+    background:#87ceeb !important;
+}
+a{
+    padding: 10px;
+    text-decoration: none;
+    color:#fff;
+}
+

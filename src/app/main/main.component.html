@@ -1,0 +1,659 @@
+<div class="main-panel">
+    <div class="my-container">
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    </div>
+    
+    <div class="content-wrapper">
+      <div class="row mb-4">
+        <div class="col-12 d-flex align-items-center justify-content-between">
+          <h4 class="page-title">Dashboard</h4>
+          <div class="d-flex align-items-center">
+            <div class="wrapper mr-4 d-none d-sm-block">
+              <p class="mb-0">Summary for
+                <b class="mb-0">{{todayDate | date}}</b>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 card-statistics">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+              <div class="card">
+               <div class="card-body">
+                  <div class="d-flex justify-content-between pb-2">
+                    <h5><a (click)="navigateLead('superadmin/rawLead')">Raw Leads</a></h5>
+                    <i class="icon-docs"></i>
+                  </div>
+                  <div class="d-flex justify-content-between" style="color:#131e42;">
+                    <p>Count</p>
+                    <p> {{leadsCount.rawLeadsCount}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between pb-2">
+                    <h5><a (click)="navigateLead('superadmin/currentLead')">Current Leads</a></h5>
+                    <i class="icon-pie-chart"></i>
+                  </div>
+                  <div class="d-flex justify-content-between" style="color:#131e42;">
+                    <p>Count</p>
+                    <p> {{leadsCount.currentLeadsCount}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+              <div class="card" >
+                <div class="card-body">
+                  <div class="d-flex justify-content-between pb-2">
+                    <h5><a (click)="navigateLead('superadmin/noWorkLead')">No Work</a></h5>
+                    <i class="icon-wallet"></i>
+                  </div>
+                  <div class="d-flex justify-content-between" style="color:#131e42;">
+                    <p>Count</p>
+                    <p> {{leadsCount.noWorkCount}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+              <div class="card" >
+                <div class="card-body">
+                  <div class="d-flex justify-content-between pb-2">
+                    <h5><a (click)="navigateLead('superadmin/notConnectedLead')">Not Connected</a></h5>
+                    <i class="icon-screen-desktop"></i>
+                  </div>
+                  <div class="d-flex justify-content-between" style="color:#131e42;">
+                    <p>Count</p>
+                    <p> {{leadsCount.notConnectedCount}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-12 card-statistics">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between pb-2">
+                      <h5><a (click)="navigateLead('superadmin/followUpLead')">Follow up</a></h5>
+                      <i class="icon-docs"></i>
+                    </div>
+                    <div class="d-flex justify-content-between" style="color:#131e42;">
+                      <p>Count</p>
+                      <p> {{leadsCount.followUpsCount}}</p>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between pb-2">
+                      <h5><a (click)="navigateLead('superadmin/visitOnLead')">Visit On</a></h5>
+                      <i class="icon-pie-chart"></i>
+                    </div>
+                    <div class="d-flex justify-content-between" style="color:#131e42;">
+                      <p>Count</p>
+                      <p> {{leadsCount.visitOnCounts}}</p>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between pb-2">
+                      <h5><a (click)="navigateLead('superadmin/visitDoneLead')">Visit Done</a></h5>
+                      <i class="icon-wallet"></i>
+                    </div>
+                    <div class="d-flex justify-content-between" style="color:#131e42;">
+                      <p>Count</p>
+                      <p> {{leadsCount.visitDoneCount}}</p>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between pb-2">
+                      <h5><a (click)="navigateLead('superadmin/visitDeadLead')">Visit Dead</a></h5>
+                      <i class="icon-screen-desktop"></i>
+                    </div>
+                    <div class="d-flex justify-content-between" style="color:#131e42;">
+                      <p>Count</p>
+                      <p> {{leadsCount.visitDeadCount}}</p>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-12 card-statistics">
+              <div class="row">
+                <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between pb-2">
+                        <h5><a (click)="navigateLead('superadmin/otherProjectLead')">Other Projects</a></h5>
+                        <i class="icon-docs"></i>
+                      </div>
+                      <div class="d-flex justify-content-between" style="color:#131e42;">
+                        <p>Count</p>
+                        <p> {{leadsCount.otherProjectsCount}}</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between pb-2">
+                        <h5><a (click)="navigateLead('superadmin/resaleLead')">Resale Count</a></h5>
+                        <i class="icon-pie-chart"></i>
+                      </div>
+                      <div class="d-flex justify-content-between" style="color:#131e42;">
+                        <p>Count</p>
+                        <p> {{leadsCount.resaleCount}}</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between pb-2">
+                        <h5><a (click)="navigateLead('superadmin/alreadyBookedLead')">Already Booked</a></h5>
+                        <i class="icon-wallet"></i>
+                      </div>
+                      <div class="d-flex justify-content-between" style="color:#131e42;">
+                        <p>Count</p>
+                        <p> {{leadsCount.alreadyBookedCount}}</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between pb-2">
+                        <h5><a (click)="navigateLead('superadmin/bookedDoneLead')">Booking Done</a></h5>
+                        <i class="icon-screen-desktop"></i>
+                      </div>
+                      <div class="d-flex justify-content-between" style="color:#131e42;">
+                        <p>Count</p>
+                        <p> {{leadsCount.bookedDone}}</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-12 card-statistics">
+                <div class="row">
+                  <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between pb-2">
+                          <h5><a (click)="navigateLead('superadmin/deadLead')">Dead Count</a></h5>
+                          <i class="icon-docs"></i>
+                        </div>
+                        <div class="d-flex justify-content-between" style="color:#131e42;">
+                          <p>Count</p>
+                          <p> {{leadsCount.deadCount}}</p>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between pb-2">
+                          <h5><a (click)="navigateLead('superadmin/rentLead')">Rent Count</a></h5>
+                          <i class="icon-pie-chart"></i>
+                        </div>
+                        <div class="d-flex justify-content-between" style="color:#131e42">
+                          <p>Count</p>
+                          <p> {{leadsCount.rentCount}}</p>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between pb-2">
+                          <h5><a (click)="navigateLead('superadmin/plotLead')">Plot Count</a></h5>
+                          <i class="icon-wallet"></i>
+                        </div>
+                        <div class="d-flex justify-content-between" style="color:#131e42">
+                          <p>Count</p>
+                          <p> {{leadsCount.plotCount}}</p>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between pb-2">
+                          <h5><a (click)="navigateLead('superadmin/duplicateLead')">Duplicate</a></h5>
+                          <i class="icon-screen-desktop"></i>
+                        </div>
+                        <div class="d-flex justify-content-between" style="color:#131e42;">
+                          <p>Count</p>
+                          <p> {{leadsCount.duplicateCount}}</p>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+     
+      
+      
+    </div>
+ 
+  </div>
+  <!-- main-panel ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class='container'>
+
+  <h1>Dashboard</h1>
+  <div class="row">
+      <div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #33ccdd, #297cd0);box-shadow: 5px 5px rgba(0,0,0,0.2);">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                  </div>
+                      <div class="mr-5">
+                          Raw Leads: {{leadsCount.rawLeadsCount}}
+                        
+                          <img src ="assets/images/klkl.svg" style="margin-left:42px">
+                      </div>     
+</div>
+<a class="card-footer text-white clearfix small z-1"  routerLink="rawLead">
+        <span class="float-left" style="overflow: hidden"></span>
+        <span class="float-right">
+            <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+ 
+
+      </div>
+      <div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #FFA500, #FF7F50);box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                        
+        
+                      </div>
+                      <div class="mr-3">
+                             Current Leads:  {{leadsCount.currentLeadsCount}} <img src ="assets/images/klkl.svg" style="margin-left:50px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="currentLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+            <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div><div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #83DC0B, #63A905);box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                     
+        
+                      </div>
+                      <div class="mr-3">
+                            No works:   {{leadsCount.noWorkCount}} <img src ="assets/images/klkl.svg" style="margin-left:50px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="noWorkLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+            <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div><div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #33ccdd, #297cd0);box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                        
+        
+                      </div>
+                      <div class="mr-3">
+                            Not connected:  {{leadsCount.notConnectedCount}}  <img src ="assets/images/klkl.svg" style="margin-left:50px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="notConnectedLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+          <i class="fa fa-info-circle" style="font-size: 20px" title="View Details" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div><div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #FFA500, #FF7F50);box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+ 
+        
+                      </div>
+                      <div class="mr-3">
+                            Follow Up: {{leadsCount.followUpsCount}} <img src ="assets/images/klkl.svg" style="margin-left:50px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="followUpLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+          <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div><div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #83DC0B, #63A905)  ;box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                       
+        
+                      </div>
+                      <div class="mr-3">
+                            Visit On: {{leadsCount.visitOnCounts}} <img src ="assets/images/klkl.svg" style="margin-left:50px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="visitOnLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+          <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div><div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #33ccdd, #297cd0);box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                
+        
+                      </div>
+                      <div class="mr-3">
+                            Visit Done: {{leadsCount.visitDoneCount}} <img src ="assets/images/klkl.svg" style="margin-left:50px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="visitDoneLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+          <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div><div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #FFA500, #FF7F50);box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                      
+        
+                      </div>
+                      <div class="mr-3">
+                            Visit Dead: {{leadsCount.visitDeadCount}} <img src ="assets/images/klkl.svg" style="margin-left:50px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="visitDeadLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+          <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div><div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #83DC0B, #63A905);box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                       
+        
+                      </div>
+                      <div class="mr-3">
+                            Other projects Count: {{leadsCount.otherProjectsCount}} <img src ="assets/images/klkl.svg" style="margin-left:10px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="otherProjectLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+          <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div><div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #33ccdd, #297cd0);box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                        
+        
+                      </div>
+                      <div class="mr-3">
+                            Resale Count: {{leadsCount.resaleCount}} <img src ="assets/images/klkl.svg" style="margin-left:50px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="resaleLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+          <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div><div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #FFA500, #FF7F50);box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                       
+                        
+        
+                      </div>
+                      <div class="mr-3">
+                            Already Booked: {{leadsCount.alreadyBookedCount}} <img src ="assets/images/klkl.svg" style="margin-left:50px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="alreadyBookedLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+          <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div><div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #83DC0B, #63A905);box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                      
+        
+                      </div>
+                      <div class="mr-3">
+                            Booking Done: {{leadsCount.bookedDone}} <img src ="assets/images/klkl.svg" style="margin-left:50px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="bookedDoneLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+          <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div><div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #33ccdd, #297cd0);box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+               
+        
+                      </div>
+                      <div class="mr-3">
+                            Dead Count: {{leadsCount.deadCount}} <img src ="assets/images/klkl.svg" style="margin-left:50px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="deadLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+          <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div><div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #FFA500, #FF7F50);box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                        
+        
+                      </div>
+                      <div class="mr-3">
+                            Rent Count: {{leadsCount.rentCount}} <img src ="assets/images/klkl.svg" style="margin-left:50px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="rentLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+          <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div><div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #83DC0B, #63A905);box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                       
+        
+                      </div>
+                      <div class="mr-3">
+                            Plot Count: {{leadsCount.plotCount}} <img src ="assets/images/klkl.svg" style="margin-left:50px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="plotLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+          <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div><div class="col-xl-3 col-sm-6 mb-3">
+
+            <div class="card text-white  o-hidden h-100" style="background: linear-gradient(to bottom right, #33ccdd, #297cd0);box-shadow: 5px 5px rgba(0,0,0,0.2)">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                 
+        
+                      </div>
+                      <div class="mr-3">
+                            Duplicate Count: {{leadsCount.duplicateCount}} <img src ="assets/images/klkl.svg" style="margin-left:50px"></div>     
+</div>
+<a class="card-footer text-white clearfix small z-1" routerLink="duplicateLead">
+        <span class="float-left"></span>
+        <span class="float-right">
+          <i class="fa fa-info-circle" title="View Details" style="font-size: 20px" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+
+    
+      </div>
+            
+  </div> <br> <br>
+</div>-->
+ 
+

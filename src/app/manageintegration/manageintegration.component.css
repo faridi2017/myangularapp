@@ -1,0 +1,32 @@
+.main-panel{
+    margin-left: 20%;
+   }
+   .table-responsive{
+    margin: 10px;
+}
+   
+   .btn{
+    background: #87ceeb;
+    color: #131e42;
+    border-radius: 25px;
+    font-size: 12px;
+    box-shadow: 2px 2px 2px 2px #cccccc;
+    -webkit-box-shadow: 2px 2px 2px 2px #cccccc;
+    -moz-box-shadow: 2px 2px 2px 2px #cccccc;
+    font-weight: bold;
+}
+.btn:hover{
+    background: #ffffff;
+    border: 1px solid #87ceeb;
+    color: #000000;
+}
+  
+   @media only screen and (max-width: 768px) {
+       .main-panel{
+           margin-left: 0px;
+           width: 100%;
+          }  
+       .table-responsive{
+           width: 100%;
+       }
+   }

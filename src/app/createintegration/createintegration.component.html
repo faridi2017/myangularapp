@@ -1,0 +1,147 @@
+<!-- partial -->
+<div class="main-panel" >
+    <ngx-spinner
+    bdColor="rgba(51,51,51,0.8)"
+    size="medium"
+    color="#f7964f"
+    type="ball-scale-multiple">
+   <p style="font-size: 20px; color: white">Loading...</p>
+  </ngx-spinner>
+    <div class="content-wrapper">
+      <div class="card">
+       <div class="card-body">
+          <h4 class="card-title" style="color: #fb4b1a">Create Integration</h4>
+          <div class="row">
+              <div class="col-md-6">
+                  <form role="form" [formGroup]="createIntergrationForm" 
+                    (ngSubmit)=" createIntegration(createIntergrationForm.value)">
+                    <div class="form-group">
+                    <label>Source</label>
+                    <select class="form-control"  formControlName="Name" required=""
+                         [(ngModel)]="newIntegration.sourceType.name" (change)="selectedProject()">
+                         <option>Select Source</option>
+                         <option>99 Acres</option>
+                      <option>Magicbricks</option>
+                      <option>Facebook</option>
+                      <option>Google</option>
+                      <option>Excelsheet</option>
+                    </select> 
+                   </div>
+                   <div class="form-group">
+                       <label>Company Name</label>
+                       <input class="form-control"  formControlName="companyId" required="" 
+                          [(ngModel)]="newIntegration" >
+                      </div>
+                   <div class="form-group">
+                       <label *ngIf="!show">Key</label>
+                       <label *ngIf="show">Username</label>
+                       <input type="text" formControlName="userName" required="" 
+                       class="form-control" placeholder="Key"
+                       [(ngModel)]="newIntegration.key">
+                      </div>
+                      
+                      <div class="form-group">
+                         <label  *ngIf="!show">Value</label>
+                         <label  *ngIf="show">Password</label>
+                         <input type="text"  formControlName="value" required=""  
+                         class="form-control" placeholder="value"
+                         [(ngModel)]="newIntegration.value">
+                        </div>
+                        <div class="form-group">
+                          <button type="submit" [disabled]="!createIntergrationForm.valid" class="btn btn-primary" >Save</button> &nbsp;
+                          <button (click)="cancelIntegration()"class="btn btn-danger">Cancel</button>
+                     
+                      
+                        </div>
+                 
+                  </form>
+                 </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content-wrapper ends -->
+    
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container" >
+  <h2>Create Integration</h2>
+  <div class="col-md-6">
+ <form role="form" [formGroup]="createIntergrationForm" 
+   (ngSubmit)=" createIntegration(createIntergrationForm.value)">
+   <div class="form-group">
+   <label>Source</label>
+   <select class="form-control"  formControlName="Name" required=""
+        [(ngModel)]="newIntegration.sourceType.name">
+     <option>99 Acres</option>
+     <option>Magicbricks</option>
+     <option>Facebook</option>
+     <option>Google</option>
+     <option>Excelsheet</option>
+   </select> 
+  </div>
+  <div class="form-group">
+      <label>CompanyId</label>
+      <select class="form-control"  formControlName="companyId" required="" 
+         [(ngModel)]="newIntegration.companyId">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+     </div>
+  <div class="form-group">
+      <label>Key</label>
+      <input type="text" formControlName="userName" required="" 
+      class="form-control" placeholder="Key"
+      [(ngModel)]="newIntegration.key">
+     </div>
+     
+     <div class="form-group">
+        <label>Value</label>
+        <input type="text"  formControlName="value" required=""  
+        class="form-control" placeholder="value"
+        [(ngModel)]="newIntegration.value">
+       </div>
+       <div class="form-group">
+         <button type="submit" [disabled]="!createIntergrationForm.valid" class="btn btn-primary" >Save</button> &nbsp;
+         <button (click)="cancelIntegration()"class="btn btn-danger">Cancel</button>
+    
+     
+       </div>
+
+ </form>
+</div>
+</div>-->

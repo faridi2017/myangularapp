@@ -1,0 +1,84 @@
+<div *ngIf="leadsCount" class="w3-sidebar w3-bar-block w3-border-right" style="display:none;
+background:#87ceeb;color:#131e42;width:265px;box-shadow: 2px 2px 2px 2px #cccccc;" id="mySidebar">
+
+  <button onclick="w3_close()" class="w3-bar-item w3-large" 
+  style="background:#87ceeb;color:#131e42;"><span>
+      <img src="assets/images/vc-logo.svg" alt="profile image" style="height: 50px;margin-left: 20px;">
+  </span>
+  <i class="fa fa-window-close" style="font-size:28px;color:white;margin-left:70px;
+    border-radius:25px;margin-top:8px"></i> </button>
+  
+  
+  
+  <a routerLink="home" class="w3-bar-item w3-button"> <i class="fa fa-tachometer"></i> &nbsp;Dashboard</a>
+  <!--<a routerLink="manageIntegrations" class="w3-bar-item w3-button" *ngIf="vedagya19">
+    Manage Integrations</a>-->
+  <a routerLink="projects" class="w3-bar-item w3-button"><i class="fa fa-users"></i> &nbsp; Projects</a>
+  <a routerLink="manageUser" class="w3-bar-item w3-button"><i class="fa fa-user"></i> &nbsp; Users</a>
+  <a *ngIf="showCompany" routerLink="manageCompanies" class="w3-bar-item w3-button"><i class="fa fa-industry"></i> 
+     &nbsp; Companies</a>
+  <!--  *ngIf="showCompany"-->
+  
+  <div><button (click)="showHide()" style="background: transparent;border: none;" 
+     class="w3-bar-item w3-button"><i class="fa fa-dropbox"></i> &nbsp;Leads  <i class="fa fa-caret-down"></i></button>
+    <div *ngIf="show">
+    <a routerLink="uploadFiles" class="w3-bar-item w3-button">Upload Leads (Excel file)</a>
+  <a routerLink="rawLead" class="w3-bar-item w3-button">Raw Leads: {{leadsCount.rawLeadsCount}}</a>
+  <a routerLink="currentLead" class="w3-bar-item w3-button">Current Leads:
+    {{leadsCount.currentLeadsCount}}</a>
+  <a routerLink="noWorkLead" class="w3-bar-item w3-button">No work:
+    {{leadsCount.noWorkCount}}</a> 
+    <a routerLink="notConnectedLead" class="w3-bar-item w3-button">Not Connected:
+      {{leadsCount.notConnectedCount}}</a>
+  <a routerLink="followUpLead" class="w3-bar-item w3-button">Follow Up:
+    {{leadsCount.followUpsCount}}</a>
+  <a routerLink="visitOnLead" class="w3-bar-item w3-button">Visit On:
+    {{leadsCount.visitOnCounts}}</a>
+  <a routerLink="visitDoneLead" class="w3-bar-item w3-button">Visit Done:
+    {{leadsCount.visitDoneCount}}</a>
+  <a routerLink="visitDeadLead" class="w3-bar-item w3-button">Visit Dead:
+    {{leadsCount.visitDeadCount}}</a>
+  <a routerLink="otherProjectLead" class="w3-bar-item w3-button">Other project Count:
+    {{leadsCount.otherProjectsCount}}</a>
+  <a routerLink="resaleLead" class="w3-bar-item w3-button">Resale Count:
+  {{leadsCount.resaleCount}}</a>
+  <a routerLink="alreadyBookedLead" class="w3-bar-item w3-button">Already Booked:
+    {{leadsCount.alreadyBookedCount}}</a>
+  <a routerLink="bookedDoneLead" class="w3-bar-item w3-button">Booked Done:
+    {{leadsCount.bookedDone}}</a>
+  <a routerLink="deadLead" class="w3-bar-item w3-button">Dead Count:
+    {{leadsCount.deadCount}}</a>
+  <a routerLink="rentLead" class="w3-bar-item w3-button">Rent Count:
+    {{leadsCount.rentCount}}</a>
+  <a routerLink="plotLead" class="w3-bar-item w3-button">Plot Count:
+    {{leadsCount.plotCount}}</a>
+  <a routerLink="duplicateLead" class="w3-bar-item w3-button">Duplicate Count:
+    {{leadsCount.duplicateCount}}</a>
+  </div>
+</div>  
+
+    <a routerLink="sales" class="w3-bar-item w3-button" ><i class="fa fa-map-marker">
+
+    </i> &nbsp;Where is my team locations?</a>
+    <a routerLink="" class="w3-bar-item w3-button"><i class="fa fa-sign-out"></i> &nbsp;Logout</a>
+    <div style="margin-bottom: 20px;"></div>
+</div>
+
+
+<div class="w3-teal " >
+ 
+  <div class="w3-container navbar-fixed-top" style="background:#87ceeb;color:#131e42;
+       box-shadow: 2px 2px 2px 2px #cccccc;">
+      <button class="w3-button w3-teal w3-xlarge myhoverclass" onclick="w3_open()">☰</button>
+     <img src="assets/images/VC-512-px-512px.png" alt="profile image" style="height: 50px;">
+ 
+    <h5  style="float:left; margin-right:8px;margin-top:15px"></h5>
+   <div style="float:right"> <h5 style="float:left; margin-right:8px;margin-top:15px">
+       <i class="fa fa-user" style="margin-right:8px" aria-hidden="true"></i>{{user}} |</h5>
+    <h5 style="float:left; margin-right:8px;margin-top:15px"><i class="fa fa-sign-out" aria-hidden="true">
+
+    </i><a routerLink="" ><span style="color:#131e42;">Logout</span></a></h5>
+  </div>
+  </div>
+</div>
+
