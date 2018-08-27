@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Registration } from '../modal/Registration';
 import { VictorServiceService } from '../apiService/victor-service.service';
 import { Router } from '@angular/router';
-
+import {throwError} from 'rxjs';
 @Component({
   selector: 'app-updateuser',
   templateUrl: './updateuser.component.html',
@@ -73,12 +73,18 @@ export class UpdateuserComponent implements OnInit {
 
     }
     updateUser(){
-      console.log('user updated',this.updatedUser);
+      console.log('updated user obj',this.updatedUser);
       
     //console.log(this.user.phoneNumber);
   //  console.log(this.user.userName);
     this.usersrv.updateUser(this.updatedUser).subscribe((res: any)=>{
      console.log(res);
+     alert('User updated successfully');
+     this.router.navigate(['/superadmin/manageUser']);
+    },error=>{
+      console.error('error in update api of user');
+      alert('user could not be updated! Try again');
+      this.router.navigate(['/superadmin/manageUser']);
     });
     }
     cancelUpdate(){

@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClientModule, HttpClient, HttpHeaders} from '@angular/common/http';
-import { Http, Headers } from '@angular/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+
 import { User } from '../modal/User';
-import { map } from 'rxjs/operators';
+
 import { Observable, Subject } from "rxjs";
 import { MyLead } from '../modal/MyLead';
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
 import { Project } from '../modal/project';
-import { Document } from '../modal/document';
+
 import { Company } from '../modal/company';
-import { BehaviorSubject } from 'rxjs';
+
 import { ResourceURI } from '../apilist/ResourceURI';
 import { Registration } from '../modal/Registration';
-import { ResourceLoader } from '@angular/compiler';
+
 const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
 const EXCEL_EXTENSION = '.xlsx';
 //import 'rxjs/add/observable/merge';
@@ -112,14 +112,6 @@ public postProject(project: Project):Observable<any>{
         } // end of post project
 
 
-// post Lead
-
-
-
-
-
-
-
 
                     public exportAsExcelFile(json: any[], excelFileName: string): void {
                       const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(json);
@@ -132,13 +124,7 @@ public postProject(project: Project):Observable<any>{
                        FileSaver.saveAs(data, fileName + '_export_' + new  Date().getTime() + EXCEL_EXTENSION);
                     }
 
-
-                    getIpAddress() {
-                      return this.http.get('https://ipinfo.io/json',httpOptions);
-                            
-                  }
-       
-     
+  
         
          
           postAddCompany(cmp: Company ):Observable<any>{
@@ -204,5 +190,4 @@ public postProject(project: Project):Observable<any>{
           }
 }
 
-//https://angular.io/guide/form-validation
-//https://loiane.com/2017/08/angular-reactive-forms-trigger-validation-on-submit/
+

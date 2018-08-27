@@ -49,9 +49,7 @@ project: Project;
    }
 
   ngOnInit() {
-    this.userService.getIpAddress().subscribe(data => {
-      console.log(data);
-    });
+   
     $(document).ready(function(){
       $("#mybtn").click(function(){
           alert('jquery');
